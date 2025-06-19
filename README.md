@@ -2,7 +2,8 @@
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
 *The (updated) modular switch custom firmware*
-WARNING: THIS IS A FORK OF REINX, USE THIS AT YOUR OWN RISK
+
+**WARNING: THIS IS A FORK OF REINX, IT'S NOT OFFICIALLY SUPPORTED, USE THIS AT YOUR OWN RISK**
 
 **Usage:**
 
