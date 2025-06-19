@@ -2,6 +2,7 @@
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
 *The (updated) modular switch custom firmware*
+WARNING: THIS IS A FORK OF REINX, USE THIS AT YOUR OWN RISK
 
 **Usage:**
 
@@ -15,21 +16,27 @@ git clone https://github.com/Ricca665/ReiNX-SE.git
 cd ReiNX-SE && make
 ```
 
-**The Following features will get implemented in future versions**
-	**Features:**
-	* Modularity (doesn't rely on or require any SD files to run; customize SD files to your liking)
+**The Following features will maybe get implemented in future versions (no promises)**
 
-	* Loads all KIPs from `/ReiNX/sysmodules/` directory
+```
+* Modularity (doesn't rely on or require any SD files to run; customize SD files to your liking)
 
-	* Optional custom kernel/secmon/warmboot
+* Loads all KIPs from `/ReiNX/sysmodules/` directory
 
-	* FS patches on the fly (NCA verify/cmac and optional nogc)
+* Optional custom kernel/secmon/warmboot
 
-	* Kernel patches on the fly (optional debug mode)
+* FS patches on the fly (NCA verify/cmac and optional nogc)
 
-	* Exclusive ReiNX sysmodules
+* Kernel patches on the fly (optional debug mode)
 
-	* ES patch in RXP patch format (used with custom loader.kip)
+* Exclusive ReiNX sysmodules
+
+* ES patch in RXP patch format (used with custom loader.kip)
+
+* Support for switch firmware >10.x
+
+* Support for the newer devkitARM package [DONE]
+```
 
 **Official thread:**
 
