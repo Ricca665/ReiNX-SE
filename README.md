@@ -1,8 +1,7 @@
-# ReiNX
+# ReiNX-SE
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-<a href="https://discord.gg/NxpeNwz"><img src="https://discordapp.com/api/guilds/465980502206054400/embed.png" alt="Discord Server" /></a>
 
-*The modular switch custom firmware*
+*The (updated) modular switch custom firmware*
 
 **Usage:**
 
@@ -12,35 +11,29 @@ Put `ReiNX` folder on the root of your switch's SD card and run `ReiNX.bin` with
 
 You'll need devkitpro with devkitARM (along with the `devkitarm-rules` package) and run:
 ```
-git clone --recurse-submodules https://github.com/Reisyukaku/ReiNX.git
-cd ReiNX && make
+git clone https://github.com/Ricca665/ReiNX-SE.git
+cd ReiNX-SE && make
 ```
 
-To compile with Docker, `chmod +x docker-build.sh` and run the shell script `./docker-build.sh`. After that, just check `out` dir. This will compile without requiring installation of DevKit* dependencies.
+**The Following features will get implemented in future versions**
+	**Features:**
+	* Modularity (doesn't rely on or require any SD files to run; customize SD files to your liking)
 
+	* Loads all KIPs from `/ReiNX/sysmodules/` directory
 
-**Features:**
-* Modularity (doesn't rely on or require any SD files to run; customize SD files to your liking)
+	* Optional custom kernel/secmon/warmboot
 
-* Loads all KIPs from `/ReiNX/sysmodules/` directory
+	* FS patches on the fly (NCA verify/cmac and optional nogc)
 
-* Optional custom kernel/secmon/warmboot
+	* Kernel patches on the fly (optional debug mode)
 
-* FS patches on the fly (NCA verify/cmac and optional nogc)
+	* Exclusive ReiNX sysmodules
 
-* Kernel patches on the fly (optional debug mode)
-
-* Exclusive ReiNX sysmodules
-
-* ES patch in RXP patch format (used with custom loader.kip)
+	* ES patch in RXP patch format (used with custom loader.kip)
 
 **Official thread:**
 
 [HERE](https://gbatemp.net/threads/official-reinx-thread.512203/)
-
-**Official Installation guide**
-
-[HERE](https://reinx.guide/)
 
 **Credits:**
 
