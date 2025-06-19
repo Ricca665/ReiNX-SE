@@ -4,9 +4,14 @@ ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
 
+ifeq ($(strip $(DEVKITA64)),)
+$(error "Please set DEVKITA64 in your environment. export DEVKITA64=<path to>devkitA64")
+endif
+
 include $(DEVKITARM)/base_tools
 LD = $(DEVKITARM)/bin/arm-none-eabi-ld
-OBJCOPY = $(DEVKITARM)/bin/arm-none-eabi-objcopy
+OBJCOPY = $(DEVKITA64)/aarch64-none-elf/bin/objcopy
+
 
 name := payload
 
