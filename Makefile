@@ -26,6 +26,7 @@ dir_septchainloader := septchainloader
 ARCH := -march=armv4t -mtune=arm7tdmi -mthumb -mthumb-interwork
 CFLAGS = $(ARCH) -DVERSION_MAJOR='$(ver_major)' -DVERSION_MINOR='$(ver_minor)' -Os -nostdlib -ffunction-sections -fdata-sections -fomit-frame-pointer -fno-inline -fno-builtin -std=gnu11# -Wall -Werror
 LDFLAGS = $(ARCH) -nostartfiles -lgcc -Wl,--nmagic,--gc-sections
+ENABLEEXPERIMENTALSYSMODULES = "n"
 
 objects =	$(patsubst $(dir_source)/%.s, $(dir_build)/%.o, \
 			$(patsubst $(dir_source)/%.c, $(dir_build)/%.o, \
@@ -38,9 +39,17 @@ endef
 .PHONY: all
 all: reinx sysmod
 
-.PHONY: sysmod
-sysmod: $(dir_out)/sysmodules
+.PHONY: sysmod sysmod-noop
 
+ifeq ($(ENABLEEXPERIMENTALSYSMODULES), y)
+sysmod: $(dir_out)/sysmodules
+else
+sysmod: sysmod-noop
+
+sysmod-noop:
+	@echo "NX_Sysmodules not implemented yet! Skipping..."
+endif
+	
 .PHONY: reinx
 reinx: $(dir_out)/$(name).bin
 
@@ -49,8 +58,8 @@ clean:
 	@echo "clean ..."
 	@rm -rf $(dir_build)
 	@rm -rf $(dir_out)
-	@$(MAKE) -C $(dir_sysmod) clean
-
+	@if [ -d "$(dir_sysmod)" ]; then $(MAKE) -C $(dir_sysmod) clean; fi # Cleans the NX_Sysmod dir only if it exists
+	@$(MAKE) -C $(dir_septchainloader) clean
 
 $(dir_out)/sysmodules: $(dir_sysmod)
 	@$(MAKE) ver_maj=$(ver_major) ver_min=$(ver_minor) -C $(dir_sysmod)

@@ -40,7 +40,7 @@ septchainloader: $(dir_out)/$(name).bin
 
 .PHONY: clean
 clean:
-	@echo "clean ..."
+	@echo "cleaning septchainloader ..."
 	@rm -rf $(dir_build)
 	@rm -rf $(dir_out)
 
